@@ -27,8 +27,9 @@ workflows:
     scripts:
       - name: Apply signing profiles
         script: |
-          xcode-project use-profiles --project "$XCODE_PROJECT"
-
+          xcode-project use-profiles \
+            --project "$XCODE_PROJECT" \
+            --archive-method app-store
       - name: Build IPA
         script: |
           xcode-project build-ipa \
